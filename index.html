@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#121212">
+  <meta name="description" content="Sonora — офлайн-плеер для вашей музыки">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sonora">
+  <title>Sonora</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="auth" id="auth" hidden></section>
+  <div id="app" hidden>
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main" id="main"><div id="view"></div></main>
+    <footer class="player empty" id="player"></footer>
+    <nav class="tabbar" id="tabbar"></nav>
+  </div>
+
+  <section class="np" id="np" hidden></section>
+  <section class="car" id="car" hidden></section>
+  <aside class="queue" id="queue" hidden></aside>
+
+  <div class="menu-layer" id="menu" hidden></div>
+  <div class="modal-layer" id="modal" hidden></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="importbar" id="importbar" hidden></div>
+  <div class="dropzone" id="dropzone" hidden><div>Отпустите, чтобы добавить музыку</div></div>
+
+  <input type="file" id="fileInput" accept="audio/*,.mp3,.m4a,.aac,.flac,.wav,.ogg,.oga,.opus,.webm,.weba,.aiff,.aif" multiple hidden>
+  <input type="file" id="folderInput" webkitdirectory directory multiple hidden>
+  <audio id="audio" preload="auto"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
